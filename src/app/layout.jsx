@@ -1,4 +1,5 @@
 import TopBar from "@/components/navbar/TopBar";
+import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 
 /**
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="flex min-h-screen flex-col">
         <TopBar />
+        <Navbar/>
         
         <main className="flex-1">{children}</main>
       

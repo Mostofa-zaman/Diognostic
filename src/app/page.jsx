@@ -1,4 +1,5 @@
-import Button from "@/components/navbar/common/Button";
+import Button from "@/components/common/Button";
+import Navbar from "@/components/navbar/Navbar";
 
 
 
@@ -6,7 +7,7 @@ export default function Home() {
   return (
   <>
  
- <Button text="Click me" colour="red"/>
+
 
   </>
   );
