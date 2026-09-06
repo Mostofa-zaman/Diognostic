@@ -3,6 +3,7 @@ import { Phone, Clock, Mail, MapPin } from "lucide-react";
 
 export default function TopBar() {
   return (
+    
     <div className="hidden bg-navy-900 text-navy-100 md:block">
       <div className="container-xl flex h-10 items-center justify-between text-xs">
         
