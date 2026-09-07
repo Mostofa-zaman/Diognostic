@@ -1,12 +1,11 @@
-import Button from "@/components/common/Button";
-import Navbar from "@/components/navbar/Navbar";
+import Hero from "@/components/hero/Hero";
 
 
 
-export default function Home() {
+export default function HomePage() {
   return (
   <>
- 
+ <Hero/>
 
 
   </>
