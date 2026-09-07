@@ -8,6 +8,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import VitalDivider from "../common/VitalDivider";
 
 const images = [
   "/images/slider1.jpg",
@@ -22,10 +23,10 @@ const stats = [
   { value: "100K+", label: "Patients Served" },
 ];
 
-const Hero = () => {
+export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-900">
-      {/* background pattern */}
+      {/* Background pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
@@ -35,9 +36,9 @@ const Hero = () => {
         }}
         aria-hidden="true"
       />
-     {/* full content */}
+      {/* full content */}
       <div className="container-xl relative grid gap-12 py-20 md:py-28 lg:grid-cols-2 lg:items-center">
-        {/*left column*/}
+        {/* left column */}
         <div className="animate-fadeUp">
           <span className="eyebrow text-teal-400">
             <ShieldCheck size={14} /> Trusted Diagnosis, Better Care
@@ -73,10 +74,8 @@ const Hero = () => {
             ))}
           </div>
         </div>
-
-        {/*right column*/}
-
-         <div className="relative animate-fadeUp [animation-delay:150ms]">
+           {/* right column */}
+        <div className="relative animate-fadeUp [animation-delay:150ms]">
           <div className="relative overflow-hidden rounded-3xl border border-navy-700 shadow-cardHover">
             <Swiper
               modules={[Autoplay, Pagination]}
@@ -104,12 +103,18 @@ const Hero = () => {
             </Swiper>
             <div className="absolute z-10 inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
           </div>
+              <div className="z-50 absolute -bottom-6 left-6 right-6 rounded-2xl bg-white p-5 shadow-cardHover md:left-8 md:right-auto md:w-72">
+            <VitalDivider color="#1f9074" className="mb-2" />
+            <p className="font-display text-lg font-semibold text-navy-900">
+              Report Ready in Hours
+            </p>
+            <p className="mt-1 text-sm text-navy-500">
+              Digital reports delivered fast, with accuracy you can rely on.
+            </p>
+          </div>
        
         </div>
-      
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

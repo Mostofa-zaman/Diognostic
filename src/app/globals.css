@@ -7,37 +7,23 @@
   --font-jetbrains: "JetBrains Mono", ui-monospace, monospace;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
 
+  /* Sand */
+  --color-sand-50: #faf9f6;
+  --color-sand-100: #f5f3ed;
+  --color-sand-200: #ebe8dc;
+
   /* Teal */
-  --color-teal-50: #f0fdfa;
-  --color-teal-100: #ccfbf1;
   --color-teal-200: #99f6e4;
-  --color-teal-300: #5eead4;
-  --color-teal-400: #2dd4bf;
   --color-teal-500: #14b8a6;
   --color-teal-700: #0f766e;
 
   /* Navy */
-  --color-navy-50: #f8fafc;
-  --color-navy-100: #e2e8f0;
-  --color-navy-600: #475569;
-  --color-navy-700: #334155;
   --color-navy-900: #0f172a;
-
-  /* Sand */
-  --color-sand-50: #faf9f6;
-  --color-sand-100: #f3f0e8;
-  --color-sand-200: #e7e2d6;
-
-  /* Gold */
-  --color-gold-400: #fbbf24;
-  --color-gold-500: #f59e0b;
 }
 
-:root {
-  --font-fraunces: "Fraunces", ui-serif, Georgia, serif;
-  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-jetbrains: "JetBrains Mono", ui-monospace, monospace;
-}
+/* =========================
+   Base
+========================= */
 
 html {
   scroll-behavior: smooth;
@@ -46,6 +32,19 @@ html {
 body {
   @apply bg-sand-50 text-navy-900 font-body antialiased;
 }
+
+/* =========================
+   Selection
+========================= */
+
+::selection {
+  background-color: var(--color-teal-200);
+  color: var(--color-navy-900);
+}
+
+/* =========================
+   Reduced Motion
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -61,28 +60,42 @@ body {
   }
 }
 
-::selection {
-  background-color: var(--color-teal-200);
-  color: var(--color-navy-900);
-}
+/* =========================
+   Container
+========================= */
 
 .container-xl {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
+/* =========================
+   Section Spacing
+========================= */
+
 .section-py {
   @apply py-16 md:py-24;
 }
+
+/* =========================
+   Eyebrow
+========================= */
 
 .eyebrow {
   @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal-700;
 }
 
+/* =========================
+   Focus Ring
+========================= */
+
 .focus-ring {
   @apply outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 focus-visible:ring-offset-sand-50;
 }
 
-/* Signature "vital line" divider */
+/* =========================
+   Vital Divider
+========================= */
+
 .vital-divider {
   height: 28px;
   width: 100%;
@@ -90,10 +103,38 @@ body {
 }
 
 .vital-path {
+  /*
+    Total path length is approximately 1200.
+    Dash creates the drawing effect.
+  */
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
+
+  /*
+    Heartbeat line continuously draws
+    and disappears.
+  */
+  animation: pulseDraw 3s ease-in-out infinite;
 }
 
-.animate-in .vital-path {
-  animation: pulseDraw 2.4s ease-out forwards;
+/* =========================
+   Heartbeat Animation
+========================= */
+
+@keyframes pulseDraw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  45% {
+    stroke-dashoffset: 0;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -1000;
+  }
 }
