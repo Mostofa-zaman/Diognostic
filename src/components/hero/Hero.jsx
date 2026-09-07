@@ -2,7 +2,18 @@
 
 import Button from "@/components/common/Button";
 import { ArrowRight, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
+const images = [
+  "/images/slider1.jpg",
+  "/images/slider2.jpg",
+  "/images/slider3.jpg",
+];
 
 const stats = [
   { value: "15+", label: "Years of Experience" },
@@ -24,9 +35,9 @@ const Hero = () => {
         }}
         aria-hidden="true"
       />
-
+     {/* full content */}
       <div className="container-xl relative grid gap-12 py-20 md:py-28 lg:grid-cols-2 lg:items-center">
-        {/* hero left side */}
+        {/*left column*/}
         <div className="animate-fadeUp">
           <span className="eyebrow text-teal-400">
             <ShieldCheck size={14} /> Trusted Diagnosis, Better Care
@@ -61,6 +72,39 @@ const Hero = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/*right column*/}
+
+         <div className="relative animate-fadeUp [animation-delay:150ms]">
+          <div className="relative overflow-hidden rounded-3xl border border-navy-700 shadow-cardHover">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              className="w-full"
+            >
+              {images.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative h-[300px] w-full">
+                    <Image
+                      src={image}
+                      alt={`Slider image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="absolute z-10 inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
+          </div>
+       
         </div>
       
       </div>
