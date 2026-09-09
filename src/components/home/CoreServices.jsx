@@ -9,6 +9,7 @@ export default function CoreServices() {
           title="Comprehensive diagnostic services under one roof"
           description="From routine lab work to advanced imaging, our services are built around accuracy and comfort."
         />
+      
       </div>
     </section>
   );
