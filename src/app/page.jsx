@@ -3,7 +3,7 @@ import CoreServices from "@/components/home/CoreServices";
 import Hero from "@/components/home/hero/Hero";
 import QuickSearch from "@/components/home/QuickSearch";
 import Departments from "@/components/home/Departments";
-import SpecialistsSection from "@/components/home/SpecialistsSection";
+import Specialists from "@/components/home/Specialists";
 
 export default function HomePage() {
   return (
@@ -15,7 +15,7 @@ export default function HomePage() {
         <VitalDivider color="#d3ccba" />
       </div>
       <Departments />
-      <SpecialistsSection/>
+      <Specialists/>
     </>
   );
 }
