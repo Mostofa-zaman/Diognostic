@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
           {points.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-navy-800 bg-navy-900/60 p-6 transition-colors hover:border-teal-600/50"
+              className="rounded-2xl border border-navy-800 bg-navy-800/60 p-6 transition-colors hover:border-teal-600/50"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-600/15 text-teal-400">
                 <Icon name={p.icon} size={20} />
