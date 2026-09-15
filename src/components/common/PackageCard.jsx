@@ -1,6 +1,7 @@
 
   import Card from "@/components/common/Card";
   import Label from "../common/Label";
+import { CheckCircle2 } from "lucide-react";
 
 
 
@@ -16,6 +17,20 @@
             <p className="mt-1 text-sm text-navy-500">{pkg.testCount} Tests Included</p>
           </div>
         </div>
+        
+      <ul className="mt-4 space-y-2">
+        {pkg.tests.slice(0, 5).map((t) => (
+          <li key={t} className="flex items-start gap-2 text-sm text-navy-600">
+            <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-teal-600" />
+            {t}
+          </li>
+        ))}
+        {pkg.tests.length > 5 && (
+          <li className="text-sm font-medium text-teal-700">
+            +{pkg.tests.length - 5} more tests
+          </li>
+        )}
+      </ul>
 
       
       </Card>
