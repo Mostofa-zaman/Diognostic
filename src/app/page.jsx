@@ -5,6 +5,7 @@ import QuickSearch from "@/components/home/QuickSearch";
 import Departments from "@/components/home/Departments";
 import Specialists from "@/components/home/Specialists";
 import HealthPackages from "@/components/home/HealthPackages";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Departments />
       <Specialists/>
       <HealthPackages/>
+      <WhyChooseUs/>
     </>
   );
 }
