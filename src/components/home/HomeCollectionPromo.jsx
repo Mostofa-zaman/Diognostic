@@ -20,7 +20,7 @@ export default function HomeCollectionPromo() {
             </h2>
             <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {features.map((f) => (
-                <li key={f} className="flex items-center gap-2 text-sm text-teal-50">
+                <li key={f} className="flex items-center gap-2 text-sm text-teal-200">
                   <CheckCircle2 size={16} className="text-white" /> {f}
                 </li>
               ))}
@@ -29,7 +29,13 @@ export default function HomeCollectionPromo() {
               Book Home Collection
             </Button>
           </div>
-         
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=900&auto=format&fit=crop"
+              alt="Home sample collection by trained staff"
+              className="h-72 w-full rounded-2xl object-cover shadow-cardHover md:h-96"
+            />
+          </div>
         </div>
       </div>
     </section>
