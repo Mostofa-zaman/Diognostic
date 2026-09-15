@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionHeading from '../common/SectionHeading'
+import PackageCard from '../common/PackageCard'
 
 
 export default function HealthPackages() {
@@ -14,7 +15,7 @@ export default function HealthPackages() {
               align="center"
               className="mx-auto"
             />
-         
+         <PackageCard/>
           </div>
         </section>
   )

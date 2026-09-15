@@ -4,6 +4,7 @@ import Hero from "@/components/home/hero/Hero";
 import QuickSearch from "@/components/home/QuickSearch";
 import Departments from "@/components/home/Departments";
 import Specialists from "@/components/home/Specialists";
+import HealthPackages from "@/components/home/HealthPackages";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       </div>
       <Departments />
       <Specialists/>
+      <HealthPackages/>
     </>
   );
 }
