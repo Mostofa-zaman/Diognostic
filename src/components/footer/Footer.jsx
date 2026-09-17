@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Activity, Clock, Mail, MapPin, Phone } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
-
+import { Activity, MapPin, Phone, Mail, Clock } from "lucide-react";
+import {  FaFacebookF, FaInstagramSquare,  FaLinkedinIn,  FaYoutubeSquare } from "react-icons/fa";
 
 const columns = [
   {
@@ -35,10 +34,9 @@ const columns = [
   },
 ];
 
-
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-navy-200">
+    <footer className="bg-navy-900 text-navy-200">
       <div className="container-xl grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <Link href="/" className="flex items-center gap-2.5">
@@ -55,10 +53,10 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-300">
-            Trusted Diagnosis, Better Care. Advanced diagnostic services,
-            experienced doctors and modern medical technology, all in one place.
+            Trusted Diagnosis, Better Care. Advanced diagnostic services, experienced
+            doctors and modern medical technology, all in one place.
           </p>
-           <div className="mt-6 space-y-2.5 text-sm text-navy-300">
+          <div className="mt-6 space-y-2.5 text-sm text-navy-300">
             <p className="flex items-start gap-2">
               <MapPin size={16} className="mt-0.5 shrink-0 text-teal-400" />
               House 14, Road 7, Gulshan-2, Dhaka 1212, Bangladesh
@@ -76,8 +74,8 @@ export default function Footer() {
               Saturday – Thursday, 8:00 AM – 10:00 PM
             </p>
           </div>
-             <div className="mt-6 flex items-center gap-3">
-            {[FaFacebook, FaYoutube, FaInstagram, FaLinkedin].map((Icon, i) => (
+          <div className="mt-6 flex items-center gap-3">
+            {[FaFacebookF, FaYoutubeSquare, FaInstagramSquare, FaLinkedinIn].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
@@ -88,6 +86,29 @@ export default function Footer() {
               </a>
             ))}
           </div>
+        </div>
+
+        {columns.map((col) => (
+          <div key={col.title}>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
+              {col.title}
+            </h4>
+            <ul className="space-y-2.5 text-sm text-navy-300">
+              {col.links.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="transition-colors hover:text-teal-400">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div className="border-t border-navy-800">
+        <div className="container-xl flex flex-col items-center justify-between gap-3 py-6 text-xs text-navy-400 md:flex-row">
+          <p>© 2026 S. Alam Digital Diagnostic Center. All Rights Reserved.</p>
+          <p>Demo content for illustration purposes only.</p>
         </div>
       </div>
     </footer>
