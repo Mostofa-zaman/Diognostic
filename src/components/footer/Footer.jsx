@@ -1,4 +1,4 @@
-import { Activity } from "lucide-react";
+import { Activity, Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -23,6 +23,24 @@ export default function Footer() {
             Trusted Diagnosis, Better Care. Advanced diagnostic services,
             experienced doctors and modern medical technology, all in one place.
           </p>
+           <div className="mt-6 space-y-2.5 text-sm text-navy-300">
+            <p className="flex items-start gap-2">
+              <MapPin size={16} className="mt-0.5 shrink-0 text-teal-400" />
+              House 14, Road 7, Gulshan-2, Dhaka 1212, Bangladesh
+            </p>
+            <p className="flex items-center gap-2">
+              <Phone size={16} className="shrink-0 text-teal-400" />
+              16263 / 01711-000000
+            </p>
+            <p className="flex items-center gap-2">
+              <Mail size={16} className="shrink-0 text-teal-400" />
+              care@salamdiagnostic.com.bd
+            </p>
+            <p className="flex items-center gap-2">
+              <Clock size={16} className="shrink-0 text-teal-400" />
+              Saturday – Thursday, 8:00 AM – 10:00 PM
+            </p>
+          </div>
         </div>
       </div>
     </footer>
