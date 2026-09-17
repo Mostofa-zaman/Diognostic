@@ -21,6 +21,7 @@ export default function HealthTips() {
             View All Articles →
           </Button>
         </div>
+        
            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {blogs.slice(0, 3).map((b) => (
               <BlogCard key={b.slug} blog={b} />

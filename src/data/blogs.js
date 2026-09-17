@@ -26,8 +26,8 @@ export const blogs = [
       "Blood sugar testing frequency depends on individual risk factors and existing conditions. For most healthy adults, an annual fasting blood sugar test is recommended as part of a routine checkup. Those with a family history of diabetes, higher body weight, or symptoms such as frequent thirst and fatigue should test more regularly. For individuals already diagnosed with diabetes, testing frequency is typically guided by a treating physician and may range from several times a day to a few times a week depending on the treatment plan.",
   },
   {
-    slug: "understanding-your-cbc-report",
-    title: "Understanding Your CBC Report",
+    slug: "understanding-your-cbc-report ",
+    title: "Understanding Your CBC Report Lab Test",
     category: "Lab Tests",
     author: "Dr. Kamrul Rahman",
     date: "2026-05-10",
@@ -65,7 +65,7 @@ export const blogs = [
       "Preventive screening programs are designed to identify risk factors before disease develops, rather than waiting for symptoms to appear. This proactive approach often leads to simpler, less invasive treatment and better long-term outcomes. Health packages that combine several relevant tests, tailored to age and gender, are an efficient way to cover common risk areas in a single visit. Choosing a screening plan appropriate to your age group is one of the most effective preventive health decisions available.",
   },
   {
-    slug: "womens-health-screening-guide",
+    slug: "womens-health-screening-guide ",
     title: "A Woman's Guide to Health Screening",
     category: "Women's Health",
     author: "Dr. Fahmida Akter",
