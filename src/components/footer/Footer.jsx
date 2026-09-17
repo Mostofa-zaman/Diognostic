@@ -1,5 +1,6 @@
-import { Activity, Clock, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { Activity, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -40,6 +41,18 @@ export default function Footer() {
               <Clock size={16} className="shrink-0 text-teal-400" />
               Saturday – Thursday, 8:00 AM – 10:00 PM
             </p>
+          </div>
+             <div className="mt-6 flex items-center gap-3">
+            {[FaFacebook, FaYoutube, FaInstagram, FaLinkedin].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                aria-label="Social link"
+                className="focus-ring flex h-9 w-9 items-center justify-center rounded-full border border-navy-700 text-navy-300 transition-colors hover:border-teal-500 hover:text-teal-400"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
           </div>
         </div>
       </div>
