@@ -1,3 +1,4 @@
+import { blogs } from "@/data/blogs";
 import Button from "../common/Button";
 import SectionHeading from "../common/SectionHeading";
 
@@ -19,6 +20,7 @@ export default function HealthTips() {
             View All Articles →
           </Button>
         </div>
+         
       </div>
     </section>
   );
