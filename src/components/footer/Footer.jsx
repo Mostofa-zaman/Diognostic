@@ -2,6 +2,40 @@ import Link from "next/link";
 import { Activity, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
+
+const columns = [
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About Us" },
+      { href: "/doctors", label: "Our Doctors" },
+      { href: "/gallery", label: "Careers" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { href: "/services#laboratory", label: "Laboratory" },
+      { href: "/services#imaging", label: "Imaging" },
+      { href: "/services#cardiology", label: "Cardiology" },
+      { href: "/packages", label: "Health Packages" },
+      { href: "/blood-collection", label: "Home Collection" },
+    ],
+  },
+  {
+    title: "Patient Services",
+    links: [
+      { href: "/appointment", label: "Book Appointment" },
+      { href: "/reports", label: "Check Report" },
+      { href: "/blood-collection", label: "Blood Collection" },
+      { href: "/doctors", label: "Find a Doctor" },
+      { href: "/faq", label: "FAQs" },
+    ],
+  },
+];
+
+
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-navy-200">
