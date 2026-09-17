@@ -8,6 +8,7 @@ import HealthPackages from "@/components/home/HealthPackages";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import HomeCollectionPromo from "@/components/home/HomeCollectionPromo";
 import HealthTips from "@/components/home/HealthTips";
+import AppointmentCTA from "@/components/home/AppointmentCTA";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <WhyChooseUs/>
       <HomeCollectionPromo/> 
       <HealthTips/>
+      <AppointmentCTA/>
     </>
   );
 }
