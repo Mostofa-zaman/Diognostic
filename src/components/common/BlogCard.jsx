@@ -24,7 +24,16 @@ export default function BlogCard({ blog }) {
         <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-navy-500">
           {blog.excerpt}
         </p>
-      
+        <div className="mt-4 flex items-center justify-between border-t border-navy-100 pt-4 text-xs text-navy-400">
+          <span>{blog.author}</span>
+          <span>
+            {new Date(blog.date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </span>
+        </div>
       </div>
     </Card>
   );
