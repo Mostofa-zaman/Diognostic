@@ -1,6 +1,7 @@
 import { blogs } from "@/data/blogs";
 import Button from "../common/Button";
 import SectionHeading from "../common/SectionHeading";
+import BlogCard from "../common/BlogCard";
 
 export default function HealthTips() {
   return (
@@ -20,7 +21,11 @@ export default function HealthTips() {
             View All Articles →
           </Button>
         </div>
-         
+           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {blogs.slice(0, 3).map((b) => (
+              <BlogCard key={b.slug} blog={b} />
+            ))}
+          </div>
       </div>
     </section>
   );
