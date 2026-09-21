@@ -1,6 +1,7 @@
 import TopBar from "@/components/navbar/TopBar";
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
+import Footer from "@/components/footer/Footer";
 
 /**
  * Fonts are loaded via standard <link> tags in the <head> below rather than
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
         <Navbar/>
         
         <main className="flex-1">{children}</main>
-      
+      <Footer/>
       </body>
     </html>
   );
