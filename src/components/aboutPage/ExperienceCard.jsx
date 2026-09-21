@@ -1,3 +1,4 @@
+import Button from "../common/Button";
 
 
 
@@ -18,7 +19,11 @@ export default function ExperienceCard() {
               </div>
             ))}
           </div>
-       
+          <div className="mt-10 text-center">
+            <Button href="/appointment" size="lg">
+              Book an Appointment
+            </Button>
+          </div>
         </div>
       </section>
   )
