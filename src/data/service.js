@@ -1,0 +1,40 @@
+export const serviceGroups = [
+  {
+    slug: "laboratory",
+    title: "Laboratory Tests",
+    description: "Precise, fast lab diagnostics for everyday and chronic health monitoring.",
+    icon: "flask-conical",
+    items: [
+      "CBC",
+      "Blood Sugar",
+      "Lipid Profile",
+      "Liver Function Test",
+      "Kidney Function Test",
+      "Thyroid Profile",
+      "HbA1c",
+      "Urine Test",
+      "Hormone Tests",
+    ],
+  },
+  {
+    slug: "imaging",
+    title: "Imaging & Radiology",
+    description: "Advanced imaging technology for accurate internal diagnosis.",
+    icon: "scan",
+    items: ["Digital X-Ray", "Ultrasonography", "4D Ultrasonography", "CT Scan", "MRI", "Mammography"],
+  },
+  {
+    slug: "cardiology",
+    title: "Cardiology",
+    description: "Heart health evaluation using modern non-invasive equipment.",
+    icon: "heart-pulse",
+    items: ["ECG", "Echocardiogram", "TMT", "Holter Monitoring"],
+  },
+  {
+    slug: "specialized",
+    title: "Specialized Diagnostics",
+    description: "Deeper diagnostic evaluation for complex clinical cases.",
+    icon: "microscope",
+    items: ["Endoscopy", "Colonoscopy", "Biopsy", "Histopathology", "Microbiology", "Immunology"],
+  },
+];
