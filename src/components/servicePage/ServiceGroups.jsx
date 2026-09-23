@@ -4,11 +4,11 @@ import Button from "../common/Button";
 
 export default function ServiceGroups() {
   return (
-     <section className="section-py space-y-16">
+  <section className="section-py space-y-16">
         <div className="container-xl">
           {serviceGroups.map((group) => (
             <div key={group.slug} id={group.slug} className="scroll-mt-24 border-b border-navy-100 pb-16 last:border-0">
-               <div className="flex flex-wrap items-start justify-between gap-6">
+              <div className="flex flex-wrap items-start justify-between gap-6">
                 <div className="flex items-start gap-4">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-700">
                     <Icon name={group.icon} size={26} />
@@ -25,6 +25,18 @@ export default function ServiceGroups() {
                 <Button href="/tests" variant="outline">
                   View Test Details
                 </Button>
+              </div>
+
+              <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {group.items.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center justify-between rounded-xl border border-navy-100 bg-white px-5 py-4"
+                  >
+                    <span className="text-sm font-medium text-navy-800">{item}</span>
+                    <span className="text-xs font-semibold text-teal-700">Available</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
