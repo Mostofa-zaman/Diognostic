@@ -1,7 +1,8 @@
+import OurSpecialists from "@/components/doctorsPage/OurSpecialists";
 
 
 export default function DoctorsPage() {
     return (
-        <h1>uhwirwi</h1>
+      <OurSpecialists/>
   )
 }
