@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import DoctorCard from "@/components/doctors/DoctorCard";
 
 export default function DoctorDirectory({ doctors, departments }) {
   const [dept, setDept] = useState("All");
@@ -36,7 +37,16 @@ export default function DoctorDirectory({ doctors, departments }) {
 
       <p className="mt-4 text-sm text-navy-400">{filtered.length} doctors found</p>
 
-      
+      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((doc) => (
+          <DoctorCard key={doc.slug} doctor={doc} />
+        ))}
+        {filtered.length === 0 && (
+          <p className="col-span-full py-16 text-center text-navy-400">
+            No doctors found in this department yet.
+          </p>
+        )}
+      </div>
     </div>
   );
 }
