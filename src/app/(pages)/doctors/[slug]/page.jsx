@@ -3,11 +3,13 @@ import { notFound } from "next/navigation";
 import Button from "@/components/common/Button";
 import Label from "@/components/common/Label";
 import { CheckCircle2 } from "lucide-react";
+import { doctors } from "@/data/doctors";
 
 export default function DoctorDetailsPage({ params }) {
   const doctor = getDoctorBySlug(params.slug);
   if (!doctor) notFound();
-  
+
+  const others = doctors.filter((d) => d.slug !== doctor.slug).slice(0, 3);
   const relatedServices = serviceGroups.find((g) => g.slug === "cardiology") || serviceGroups[0];
 
   return (
@@ -79,6 +81,26 @@ export default function DoctorDetailsPage({ params }) {
                   <span key={i} className="rounded-full bg-sand-100 px-3 py-1.5 text-xs font-medium text-navy-600">
                     {i}
                   </span>
+                ))}
+              </div>
+            </div>
+
+            
+            <div className="mt-10">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Other Specialists</h2>
+              <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                {others.map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/doctors/${o.slug}`}
+                    className="focus-ring flex items-center gap-3 rounded-xl border border-navy-100 bg-white p-3 transition-colors hover:border-teal-300"
+                  >
+                    <img src={o.photo} alt={o.name} className="h-12 w-12 rounded-full object-cover" />
+                    <div>
+                      <p className="text-sm font-semibold text-navy-800">{o.name}</p>
+                      <p className="text-xs text-navy-400">{o.specialty}</p>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
