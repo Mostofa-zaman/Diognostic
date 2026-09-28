@@ -1,7 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import DoctorCard from "@/components/doctors/DoctorCard";
+import DoctorCard from "../common/DoctorCard";
+
+
 
 export default function DoctorDirectory({ doctors, departments }) {
   const [dept, setDept] = useState("All");
