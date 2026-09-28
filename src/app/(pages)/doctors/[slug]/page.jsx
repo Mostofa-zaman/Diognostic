@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Button from "@/components/common/Button";
 import Label from "@/components/common/Label";
+import { CheckCircle2 } from "lucide-react";
 
 export default function DoctorDetailsPage({params}) {
       const doctor = getDoctorBySlug(params.slug);
@@ -40,6 +41,18 @@ export default function DoctorDetailsPage({params}) {
              <div className="mt-10">
               <h2 className="font-display text-xl font-semibold text-navy-900">Professional Bio</h2>
               <p className="mt-2 text-navy-500 leading-relaxed">{doctor.bio}</p>
+            </div>
+
+                <div className="mt-8">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Areas of Expertise</h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {doctor.expertise.map((e) => (
+                  <div key={e} className="flex items-center gap-2.5 rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm text-navy-700">
+                    <CheckCircle2 size={16} className="shrink-0 text-teal-600" />
+                    {e}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
