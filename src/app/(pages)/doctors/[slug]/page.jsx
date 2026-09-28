@@ -10,7 +10,8 @@ export default function DoctorDetailsPage({ params }) {
   if (!doctor) notFound();
 
   const others = doctors.filter((d) => d.slug !== doctor.slug).slice(0, 3);
-  const relatedServices = serviceGroups.find((g) => g.slug === "cardiology") || serviceGroups[0];
+  const relatedServices =
+    serviceGroups.find((g) => g.slug === "cardiology") || serviceGroups[0];
 
   return (
     <section className="section-py">
@@ -74,20 +75,26 @@ export default function DoctorDetailsPage({ params }) {
               </div>
             </div>
 
-              <div className="mt-10">
-              <h2 className="font-display text-xl font-semibold text-navy-900">Related Services</h2>
+            <div className="mt-10">
+              <h2 className="font-display text-xl font-semibold text-navy-900">
+                Related Services
+              </h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {relatedServices.items.map((i) => (
-                  <span key={i} className="rounded-full bg-sand-100 px-3 py-1.5 text-xs font-medium text-navy-600">
+                  <span
+                    key={i}
+                    className="rounded-full bg-sand-100 px-3 py-1.5 text-xs font-medium text-navy-600"
+                  >
                     {i}
                   </span>
                 ))}
               </div>
             </div>
 
-            
             <div className="mt-10">
-              <h2 className="font-display text-xl font-semibold text-navy-900">Other Specialists</h2>
+              <h2 className="font-display text-xl font-semibold text-navy-900">
+                Other Specialists
+              </h2>
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
                 {others.map((o) => (
                   <Link
@@ -95,15 +102,36 @@ export default function DoctorDetailsPage({ params }) {
                     href={`/doctors/${o.slug}`}
                     className="focus-ring flex items-center gap-3 rounded-xl border border-navy-100 bg-white p-3 transition-colors hover:border-teal-300"
                   >
-                    <img src={o.photo} alt={o.name} className="h-12 w-12 rounded-full object-cover" />
+                    <img
+                      src={o.photo}
+                      alt={o.name}
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
                     <div>
-                      <p className="text-sm font-semibold text-navy-800">{o.name}</p>
+                      <p className="text-sm font-semibold text-navy-800">
+                        {o.name}
+                      </p>
                       <p className="text-xs text-navy-400">{o.specialty}</p>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
+          </div>
+
+          <div>
+            <Card className="sticky top-24 space-y-4 p-6">
+              <h3 className="font-display text-lg font-semibold text-navy-900">
+                Chamber Schedule
+              </h3>
+              <div className="flex items-center gap-3 text-sm">
+                <Calendar size={17} className="text-teal-600" />
+                <div>
+                  <p className="text-navy-400">Available Days</p>
+                  <p className="font-medium text-navy-800">{doctor.days}</p>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
