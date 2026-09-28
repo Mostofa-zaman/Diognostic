@@ -131,6 +131,13 @@ export default function DoctorDetailsPage({ params }) {
                   <p className="font-medium text-navy-800">{doctor.days}</p>
                 </div>
               </div>
+               <div className="flex items-center gap-3 text-sm">
+                <Clock size={17} className="text-teal-600" />
+                <div>
+                  <p className="text-navy-400">Consultation Hours</p>
+                  <p className="font-medium text-navy-800">{doctor.time}</p>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
