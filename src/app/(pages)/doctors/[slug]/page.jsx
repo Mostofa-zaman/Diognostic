@@ -37,6 +37,10 @@ export default function DoctorDetailsPage({params}) {
                 </Button>
               </div>
             </div>
+             <div className="mt-10">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Professional Bio</h2>
+              <p className="mt-2 text-navy-500 leading-relaxed">{doctor.bio}</p>
+            </div>
           </div>
         </div>
       </div>
