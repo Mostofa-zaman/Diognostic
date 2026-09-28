@@ -1,7 +1,12 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { notFound } from "next/navigation";
+import Button from "@/components/common/Button";
+import Label from "@/components/common/Label";
 
-export default function DoctorDetailsPage() {
+export default function DoctorDetailsPage({params}) {
+      const doctor = getDoctorBySlug(params.slug);
+  if (!doctor) notFound();
+
   return (
     <section className="section-py">
       <div className="container-xl">
@@ -20,6 +25,17 @@ export default function DoctorDetailsPage() {
                 alt={doctor.name}
                 className="h-56 w-56 shrink-0 rounded-2xl object-cover shadow-card"
               />
+               <div>
+                <Label tone="teal">{doctor.specialty}</Label>
+                <h1 className="mt-3 font-display text-3xl font-semibold text-navy-900">
+                  {doctor.name}
+                </h1>
+                <p className="mt-1 text-navy-500">{doctor.degree}</p>
+                <p className="mt-1 text-sm text-navy-400">{doctor.experience} Experience</p>
+                <Button href={`/appointment?doctor=${doctor.slug}`} className="mt-5">
+                  Book Appointment
+                </Button>
+              </div>
             </div>
           </div>
         </div>
