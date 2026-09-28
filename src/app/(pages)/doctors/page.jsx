@@ -7,11 +7,9 @@ export default function DoctorsPage() {
   return (
     <>
       <OurSpecialists />
-
-      <DoctorDirectory
-        doctors={doctors}
-        departments={departments}
-      />
+      <section className="section-py">
+        <DoctorDirectory doctors={doctors} departments={departments} />
+      </section>
     </>
   );
 }
