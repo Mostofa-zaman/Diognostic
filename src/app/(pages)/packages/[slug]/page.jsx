@@ -4,10 +4,11 @@ import { notFound } from "next/navigation";
 import { getPackageBySlug } from "@/data/packages";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 
-
 export default function PackageDetailsPage() {
   const pkg = getPackageBySlug(params.slug);
   if (!pkg) notFound();
+  
+  const others = packages.filter((p) => p.slug !== pkg.slug);
 
   return (
     <section className="section-py">
@@ -27,14 +28,37 @@ export default function PackageDetailsPage() {
             <p className="mt-3 text-navy-500">
               {pkg.testCount} tests included in this package.
             </p>
-               <div className="mt-8">
-              <h2 className="font-display text-xl font-semibold text-navy-900">Included Tests</h2>
+
+            <div className="mt-8">
+              <h2 className="font-display text-xl font-semibold text-navy-900">
+                Included Tests
+              </h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {pkg.tests.map((t) => (
-                  <div key={t} className="flex items-center gap-2.5 rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm text-navy-700">
-                    <CheckCircle2 size={16} className="shrink-0 text-teal-600" />
+                  <div
+                    key={t}
+                    className="flex items-center gap-2.5 rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm text-navy-700"
+                  >
+                    <CheckCircle2
+                      size={16}
+                      className="shrink-0 text-teal-600"
+                    />
                     {t}
                   </div>
+                ))}
+              </div>
+            </div>
+               <div className="mt-10">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Other Packages</h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {others.map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/packages/${o.slug}`}
+                    className="focus-ring rounded-xl border border-navy-100 bg-white p-4 text-sm font-medium text-navy-700 transition-colors hover:border-teal-300 hover:text-teal-700"
+                  >
+                    {o.name}
+                  </Link>
                 ))}
               </div>
             </div>
