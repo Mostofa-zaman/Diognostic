@@ -1,5 +1,8 @@
 import Label from "@/components/common/Label";
-
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getPackageBySlug } from "@/data/packages";
+import { CheckCircle2, ArrowLeft } from "lucide-react";
 
 
 export default function PackageDetailsPage() {
@@ -24,6 +27,17 @@ export default function PackageDetailsPage() {
             <p className="mt-3 text-navy-500">
               {pkg.testCount} tests included in this package.
             </p>
+               <div className="mt-8">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Included Tests</h2>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {pkg.tests.map((t) => (
+                  <div key={t} className="flex items-center gap-2.5 rounded-xl border border-navy-100 bg-white px-4 py-3 text-sm text-navy-700">
+                    <CheckCircle2 size={16} className="shrink-0 text-teal-600" />
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
