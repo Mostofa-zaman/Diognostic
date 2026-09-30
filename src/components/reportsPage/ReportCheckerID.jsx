@@ -9,6 +9,7 @@ export default function ReportsPage() {
          <ReportChecker/>
         </Card>
       </div>
+      
     </section>
   );
 }
