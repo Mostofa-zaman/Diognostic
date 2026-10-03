@@ -32,6 +32,13 @@ export default function BlogDetailsPage({ params }) {
             })}
           </span>
         </div>
+         <img
+          src={blog.image}
+          alt={blog.title}
+          className="mt-8 h-72 w-full rounded-2xl object-cover shadow-card md:h-96"
+        />
+
+        <p className="mt-8 text-lg leading-relaxed text-navy-600">{blog.content}</p>
       </div>
     </article>
   )
