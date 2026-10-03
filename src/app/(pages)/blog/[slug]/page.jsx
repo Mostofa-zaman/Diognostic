@@ -9,6 +9,11 @@ export function generateStaticParams() {
   return blogs.map((b) => ({ slug: b.slug }));
 }
 
+export function generateMetadata({ params }) {
+  const blog = getBlogBySlug(params.slug);
+  if (!blog) return {};
+  return { title: blog.title, description: blog.excerpt };
+}
 
 export default function BlogDetailsPage({ params }) {
   const blog = getBlogBySlug(params.slug);
