@@ -38,7 +38,14 @@ export default function ContactPage() {
                 </div>
               </div>
             ))}
+            <div className="overflow-hidden rounded-2xl border border-navy-100">
+              <div className="flex h-48 w-full items-center justify-center bg-sand-100 text-sm text-navy-400">
+                Google Map Placeholder
+              </div>
+            </div>
              </div>
+
+             
              </div>
       </section>
 
