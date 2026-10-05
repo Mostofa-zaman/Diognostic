@@ -1,5 +1,13 @@
-import Card from "@/components/common/Card";
 
+import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
+
+const info = [
+  { icon: MapPin, title: "Address", text: "House 14, Road 7, Gulshan-2, Dhaka 1212, Bangladesh" },
+  { icon: Phone, title: "Phone", text: "01711-000000" },
+  { icon: Mail, title: "Email", text: "care@salamdiagnostic.com.bd" },
+  { icon: Clock, title: "Opening Hours", text: "Saturday – Thursday, 8:00 AM – 10:00 PM" },
+  { icon: PhoneCall, title: "Emergency Hotline", text: "16263 (24/7)" },
+];
 
 export default function ContactPage() {
   return (
