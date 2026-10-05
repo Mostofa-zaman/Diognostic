@@ -2,6 +2,11 @@ import Card from "@/components/common/Card";
 import ContactForm from "@/components/contact/ContactForm";
 import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
 
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with S. Alam Digital Diagnostic Center — address, phone, email, opening hours and contact form.",
+};
 
 const info = [
   { icon: MapPin, title: "Address", text: "House 14, Road 7, Gulshan-2, Dhaka 1212, Bangladesh" },
