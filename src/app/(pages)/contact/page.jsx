@@ -24,6 +24,24 @@ export default function ContactPage() {
         </div>
       </section>
 
+       <section className="section-py">
+        <div className="container-xl grid gap-10 lg:grid-cols-3">
+          <div className="space-y-4 lg:col-span-1">
+            {info.map((item) => (
+              <div key={item.title} className="flex items-start gap-3 rounded-2xl border border-navy-100 bg-white p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
+                  <item.icon size={18} />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-navy-900">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-navy-500">{item.text}</p>
+                </div>
+              </div>
+            ))}
+             </div>
+             </div>
+      </section>
+
      
     </>
   );
