@@ -4,27 +4,43 @@ import { doctors, getDoctorBySlug } from "@/data/doctors";
 import { serviceGroups } from "@/data/services";
 import Button from "@/components/common/Button";
 import Card from "@/components/common/Card";
-import Badge from "@/components/common/Badge";
-import { Calendar, Clock, Wallet, ArrowLeft, CheckCircle2 } from "lucide-react";
+import Label from "@/components/common/Label";
+import {
+  Calendar,
+  Clock,
+  Wallet,
+  ArrowLeft,
+  CheckCircle2,
+} from "lucide-react";
 
 export function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const doctor = getDoctorBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const doctor = getDoctorBySlug(slug);
+
   if (!doctor) return {};
+
   return {
     title: doctor.name,
     description: `${doctor.specialty} — ${doctor.degree}`,
   };
 }
 
-export default function DoctorDetailsPage({ params }) {
-  const doctor = getDoctorBySlug(params.slug);
+export default async function DoctorDetailsPage({ params }) {
+  const { slug } = await params;
+
+  const doctor = getDoctorBySlug(slug);
+
   if (!doctor) notFound();
 
-  const others = doctors.filter((d) => d.slug !== doctor.slug).slice(0, 3);
+  const others = doctors
+    .filter((d) => d.slug !== doctor.slug)
+    .slice(0, 3);
+
   const relatedServices =
     serviceGroups.find((g) => g.slug === "cardiology") || serviceGroups[0];
 
@@ -46,15 +62,22 @@ export default function DoctorDetailsPage({ params }) {
                 alt={doctor.name}
                 className="h-56 w-56 shrink-0 rounded-2xl object-cover shadow-card"
               />
+
               <div>
-                <Badge tone="teal">{doctor.specialty}</Badge>
+                <Label tone="teal">{doctor.specialty}</Label>
+
                 <h1 className="mt-3 font-display text-3xl font-semibold text-navy-900">
                   {doctor.name}
                 </h1>
-                <p className="mt-1 text-navy-500">{doctor.degree}</p>
+
+                <p className="mt-1 text-navy-500">
+                  {doctor.degree}
+                </p>
+
                 <p className="mt-1 text-sm text-navy-400">
                   {doctor.experience} Experience
                 </p>
+
                 <Button
                   href={`/appointment?doctor=${doctor.slug}`}
                   className="mt-5"
@@ -68,13 +91,17 @@ export default function DoctorDetailsPage({ params }) {
               <h2 className="font-display text-xl font-semibold text-navy-900">
                 Professional Bio
               </h2>
-              <p className="mt-2 text-navy-500 leading-relaxed">{doctor.bio}</p>
+
+              <p className="mt-2 leading-relaxed text-navy-500">
+                {doctor.bio}
+              </p>
             </div>
 
             <div className="mt-8">
               <h2 className="font-display text-xl font-semibold text-navy-900">
                 Areas of Expertise
               </h2>
+
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {doctor.expertise.map((e) => (
                   <div
@@ -85,6 +112,7 @@ export default function DoctorDetailsPage({ params }) {
                       size={16}
                       className="shrink-0 text-teal-600"
                     />
+
                     {e}
                   </div>
                 ))}
@@ -95,6 +123,7 @@ export default function DoctorDetailsPage({ params }) {
               <h2 className="font-display text-xl font-semibold text-navy-900">
                 Related Services
               </h2>
+
               <div className="mt-4 flex flex-wrap gap-2">
                 {relatedServices.items.map((i) => (
                   <span
@@ -111,6 +140,7 @@ export default function DoctorDetailsPage({ params }) {
               <h2 className="font-display text-xl font-semibold text-navy-900">
                 Other Specialists
               </h2>
+
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
                 {others.map((o) => (
                   <Link
@@ -123,11 +153,15 @@ export default function DoctorDetailsPage({ params }) {
                       alt={o.name}
                       className="h-12 w-12 rounded-full object-cover"
                     />
+
                     <div>
                       <p className="text-sm font-semibold text-navy-800">
                         {o.name}
                       </p>
-                      <p className="text-xs text-navy-400">{o.specialty}</p>
+
+                      <p className="text-xs text-navy-400">
+                        {o.specialty}
+                      </p>
                     </div>
                   </Link>
                 ))}
@@ -140,27 +174,58 @@ export default function DoctorDetailsPage({ params }) {
               <h3 className="font-display text-lg font-semibold text-navy-900">
                 Chamber Schedule
               </h3>
+
               <div className="flex items-center gap-3 text-sm">
-                <Calendar size={17} className="text-teal-600" />
+                <Calendar
+                  size={17}
+                  className="text-teal-600"
+                />
+
                 <div>
-                  <p className="text-navy-400">Available Days</p>
-                  <p className="font-medium text-navy-800">{doctor.days}</p>
+                  <p className="text-navy-400">
+                    Available Days
+                  </p>
+
+                  <p className="font-medium text-navy-800">
+                    {doctor.days}
+                  </p>
                 </div>
               </div>
+
               <div className="flex items-center gap-3 text-sm">
-                <Clock size={17} className="text-teal-600" />
+                <Clock
+                  size={17}
+                  className="text-teal-600"
+                />
+
                 <div>
-                  <p className="text-navy-400">Consultation Hours</p>
-                  <p className="font-medium text-navy-800">{doctor.time}</p>
+                  <p className="text-navy-400">
+                    Consultation Hours
+                  </p>
+
+                  <p className="font-medium text-navy-800">
+                    {doctor.time}
+                  </p>
                 </div>
               </div>
+
               <div className="flex items-center gap-3 text-sm">
-                <Wallet size={17} className="text-teal-600" />
+                <Wallet
+                  size={17}
+                  className="text-teal-600"
+                />
+
                 <div>
-                  <p className="text-navy-400">Consultation Fee</p>
-                  <p className="font-medium text-navy-800">{doctor.fee}</p>
+                  <p className="text-navy-400">
+                    Consultation Fee
+                  </p>
+
+                  <p className="font-medium text-navy-800">
+                    {doctor.fee}
+                  </p>
                 </div>
               </div>
+
               <Button
                 href={`/appointment?doctor=${doctor.slug}`}
                 className="w-full"
