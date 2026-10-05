@@ -1,4 +1,4 @@
-
+import Card from "@/components/common/Card";
 import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
 
 const info = [
@@ -44,8 +44,13 @@ export default function ContactPage() {
               </div>
             </div>
              </div>
+            <Card className="p-6 md:p-8 lg:col-span-2">
+            <h2 className="font-display text-xl font-semibold text-navy-900">Send Us a Message</h2>
+            <p className="mt-1 text-sm text-navy-500">
+              Fill out the form and our team will get back to you.
+            </p>
+             </Card>
 
-             
              </div>
       </section>
 
