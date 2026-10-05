@@ -1,6 +1,7 @@
 import Card from "@/components/common/Card";
-import ContactForm from "@/components/contactPage/ContactForm";
+import ContactForm from "@/components/contact/ContactForm";
 import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
+
 
 const info = [
   { icon: MapPin, title: "Address", text: "House 14, Road 7, Gulshan-2, Dhaka 1212, Bangladesh" },
@@ -25,7 +26,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-       <section className="section-py">
+      <section className="section-py">
         <div className="container-xl grid gap-10 lg:grid-cols-3">
           <div className="space-y-4 lg:col-span-1">
             {info.map((item) => (
@@ -44,23 +45,19 @@ export default function ContactPage() {
                 Google Map Placeholder
               </div>
             </div>
-             </div>
-            <Card className="p-6 md:p-8 lg:col-span-2">
+          </div>
+
+          <Card className="p-6 md:p-8 lg:col-span-2">
             <h2 className="font-display text-xl font-semibold text-navy-900">Send Us a Message</h2>
             <p className="mt-1 text-sm text-navy-500">
               Fill out the form and our team will get back to you.
             </p>
-
-             <div className="mt-6">
+            <div className="mt-6">
               <ContactForm />
             </div>
-             </Card>
-
-
-             </div>
+          </Card>
+        </div>
       </section>
-
-     
     </>
   );
 }
