@@ -1,5 +1,5 @@
 import Card from "@/components/common/Card";
-import ContactForm from "@/components/contact/ContactForm";
+import ContactForm from "@/components/contactPage/ContactForm";
 import { MapPin, Phone, Mail, Clock, PhoneCall } from "lucide-react";
 
 export const metadata = {
