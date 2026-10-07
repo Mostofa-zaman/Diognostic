@@ -2,6 +2,11 @@ import { Suspense } from "react";
 import Card from "@/components/common/Card";
 import AppointmentForm from "./AppointmentForm";
 
+export const metadata = {
+  title: "Book Appointment",
+  description:
+    "Book an appointment with a specialist doctor at S. Alam Digital Diagnostic Center. Choose department, doctor, date and time.",
+};
 const notes = [
   { icon: "clock", text: "Appointments are typically confirmed within a few hours." },
   { icon: "phone", text: "Our team may call to verify your preferred time slot." },
