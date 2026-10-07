@@ -1,6 +1,8 @@
 import { departments } from "@/data/departments";
 import Input from "../common/Input";
 import Select from "../common/Select";
+import Textarea from "../common/Textarea";
+import Button from "../common/Button";
 
 export default function AppointmentForm() {
 
@@ -48,7 +50,11 @@ export default function AppointmentForm() {
             required
             options={["In-Person Visit", "Video Consultation", "Follow-up Visit"]}
           />
-         
+            <Textarea id="message" label="Message" placeholder="Briefly describe your concern (optional)" />
+
+          <Button type="submit" size="lg" className="w-full sm:w-auto">
+            Confirm Appointment
+          </Button>
         </form>
     </>
   );
