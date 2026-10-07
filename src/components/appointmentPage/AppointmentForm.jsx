@@ -1,14 +1,23 @@
+"use client"
+
 import { departments } from "@/data/departments";
 import Input from "../common/Input";
 import Select from "../common/Select";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { doctors } from "@/data/doctors";
 
 export default function AppointmentForm() {
 
-
+   const searchParams = useSearchParams();
+    const [submitted, setSubmitted] = useState(false);
     const [department, setDepartment] = useState("");
 
+    const filteredDoctors = department
+      ? doctors.filter((d) => d.department === department)
+      : doctors;
   function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
