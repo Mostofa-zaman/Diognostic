@@ -1,6 +1,6 @@
-import BloodCollectionHero from "@/components/bloodCollectionPge/BloodCollectionHero";
-import CollectionServices from "@/components/bloodCollectionPge/CollectionServices";
-import SerialInfo from "@/components/bloodCollectionPge/SerialInfo";
+import BloodCollectionHero from "@/components/bloodCollectionPage/BloodCollectionHero";
+import CollectionServices from "@/components/bloodCollectionPage/CollectionServices";
+import SerialInfo from "@/components/bloodCollectionPage/SerialInfo";
 
 
 
