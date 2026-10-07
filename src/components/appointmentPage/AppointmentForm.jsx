@@ -5,9 +5,11 @@ import Input from "../common/Input";
 import Select from "../common/Select";
 import Textarea from "../common/Textarea";
 import Button from "../common/Button";
+import Modal from "../common/Modal";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { doctors } from "@/data/doctors";
+import { CheckCircle2 } from "lucide-react";
 
 export default function AppointmentForm() {
 
@@ -65,6 +67,23 @@ export default function AppointmentForm() {
             Confirm Appointment
           </Button>
         </form>
+          <Modal open={submitted} onClose={() => setSubmitted(false)}>
+          <div className="text-center">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-50 text-teal-600">
+              <CheckCircle2 size={30} />
+            </span>
+            <h3 className="mt-4 font-display text-xl font-semibold text-navy-900">
+              Appointment Request Submitted Successfully
+            </h3>
+            <p className="mt-2 text-sm text-navy-500">
+              This is a frontend demo — no real booking has been made. Our team will
+              typically confirm appointment requests by phone or email.
+            </p>
+            <Button onClick={() => setSubmitted(false)} className="mt-6 w-full">
+              Close
+            </Button>
+          </div>
+        </Modal>
     </>
   );
 }
