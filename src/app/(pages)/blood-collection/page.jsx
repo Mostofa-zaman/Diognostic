@@ -1,3 +1,4 @@
+import BloodCollectionBooking from "@/components/bloodCollectionPage/BloodCollectionBooking";
 import BloodCollectionHero from "@/components/bloodCollectionPage/BloodCollectionHero";
 import CollectionServices from "@/components/bloodCollectionPage/CollectionServices";
 import SerialInfo from "@/components/bloodCollectionPage/SerialInfo";
@@ -10,6 +11,7 @@ export default function BloodCollectionPage() {
     <BloodCollectionHero/>
     <SerialInfo/>
     <CollectionServices/>
+    <BloodCollectionBooking/>
     </>
   );
 }
