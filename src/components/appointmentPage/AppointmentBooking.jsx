@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Card from "@/components/common/Card";
 import AppointmentForm from "./AppointmentForm";
+import Icon from "../common/IconProvider";
 
 export const metadata = {
   title: "Book Appointment",
