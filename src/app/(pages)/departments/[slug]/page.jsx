@@ -10,6 +10,13 @@ import DoctorCard from "@/components/common/DoctorCard";
 export function generateStaticParams() {
   return departments.map((d) => ({ slug: d.slug }));
 }
+
+export function generateMetadata({ params }) {
+  const dept = departments.find((d) => d.slug === params.slug);
+  if (!dept) return {};
+  return { title: dept.name, description: dept.description };
+}
+
 export default async function DepartmentDetailsPage({ params }) {
   const { slug } = await params;
 
