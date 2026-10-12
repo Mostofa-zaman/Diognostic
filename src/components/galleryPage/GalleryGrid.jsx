@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X } from "lucide-react";
+import { ChevronLeft, X } from "lucide-react";
 
 export default function GalleryGrid({ images }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -43,6 +43,13 @@ export default function GalleryGrid({ images }) {
             className="focus-ring absolute right-5 top-5 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
           >
             <X size={20} />
+          </button>
+            <button
+            onClick={prev}
+            aria-label="Previous image"
+            className="focus-ring absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 md:left-6"
+          >
+            <ChevronLeft size={22} />
           </button>
         
       
