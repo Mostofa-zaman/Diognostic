@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function GalleryGrid({ images }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const open = (i) => setActiveIndex(i);
   const close = () => setActiveIndex(null);
-  
+  const prev = () => setActiveIndex((i) => (i - 1 + images.length) % images.length);
+  const next = () => setActiveIndex((i) => (i + 1) % images.length);
 
   return (
     <>
@@ -44,27 +45,28 @@ export default function GalleryGrid({ images }) {
           >
             <X size={20} />
           </button>
-            <button
+          <button
             onClick={prev}
             aria-label="Previous image"
             className="focus-ring absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 md:left-6"
           >
             <ChevronLeft size={22} />
           </button>
-            <img
+          <img
             src={images[activeIndex].src}
             alt={images[activeIndex].alt}
             className="max-h-[80vh] max-w-full rounded-2xl object-contain shadow-cardHover"
           />
-            <button
+          <button
             onClick={next}
             aria-label="Next image"
             className="focus-ring absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 md:right-6"
           >
             <ChevronRight size={22} />
           </button>
-        
-      
+          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm text-navy-200">
+            {images[activeIndex].category}
+          </p>
         </div>
       )}
     </>
