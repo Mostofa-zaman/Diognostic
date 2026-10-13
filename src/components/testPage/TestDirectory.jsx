@@ -7,6 +7,14 @@ export default function TestDirectory({ categories }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
 
+    const filtered = useMemo(() => {
+    return tests.filter((t) => {
+      const matchesCategory = category === "All" || t.category === category;
+      const matchesQuery = t.name.toLowerCase().includes(query.toLowerCase());
+      return matchesCategory && matchesQuery;
+    });
+  }, [tests, query, category]);
+
   return (
     <div>
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -36,6 +44,7 @@ export default function TestDirectory({ categories }) {
         </div>
       
       </div>
+       <p className="mt-4 text-sm text-navy-400">{filtered.length} tests found</p>
 
     </div>
   );
