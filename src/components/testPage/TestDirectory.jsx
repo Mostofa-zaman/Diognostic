@@ -51,7 +51,11 @@ export default function TestDirectory({ tests, categories }) {
         {filtered.map((t) => (
           <TestCard key={t.slug} test={t} />
         ))}
-       
+        {filtered.length === 0 && (
+          <p className="col-span-full py-16 text-center text-navy-400">
+            No tests match your search. Try a different keyword or category.
+          </p>
+        )}
       </div>
     </div>
   );
