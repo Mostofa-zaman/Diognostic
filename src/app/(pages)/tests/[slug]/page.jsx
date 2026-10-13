@@ -13,8 +13,7 @@ export default function TestDetailsPage({ params }) {
             <div className="mt-6 grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <Label tone="navy">{test.category}</Label>
-            <h1 className="m
-            t-4 font-display text-3xl font-semibold text-navy-900 md:text-4xl">
+            <h1 className="mt-4 font-display text-3xl font-semibold text-navy-900 md:text-4xl">
               {test.name}
             </h1>
             <p className="mt-4 text-navy-500 leading-relaxed">{test.description}</p>
