@@ -1,9 +1,10 @@
+import TestDirectory from "./TestDirectory";
+
 export default function TestContent() {
   return (
        <section className="section-py">
         <div className="container-xl">
-        <h2>Test Content</h2>
-        
+          <TestDirectory tests={tests} categories={testCategories} />
         </div>
       </section>
   )
