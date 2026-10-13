@@ -1,13 +1,14 @@
 "use client";
 
-import {  useState } from "react";
+import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
+import TestCard from "./TestCard";
 
-export default function TestDirectory({ categories }) {
+export default function TestDirectory({ tests, categories }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
 
-    const filtered = useMemo(() => {
+  const filtered = useMemo(() => {
     return tests.filter((t) => {
       const matchesCategory = category === "All" || t.category === category;
       const matchesQuery = t.name.toLowerCase().includes(query.toLowerCase());
@@ -42,10 +43,16 @@ export default function TestDirectory({ categories }) {
             </button>
           ))}
         </div>
-      
       </div>
-       <p className="mt-4 text-sm text-navy-400">{filtered.length} tests found</p>
 
+      <p className="mt-4 text-sm text-navy-400">{filtered.length} tests found</p>
+
+      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((t) => (
+          <TestCard key={t.slug} test={t} />
+        ))}
+       
+      </div>
     </div>
   );
 }
