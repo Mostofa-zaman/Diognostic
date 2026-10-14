@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, Clock, Droplet, FileText } from "lucide-react";
 import { notFound } from "next/navigation";
 import Card from "@/components/common/Card";
+import Button from "@/components/common/Button";
 
 import { getTestBySlug, tests } from "@/data/tests";
 import Label from "@/components/common/Label";
@@ -101,6 +102,9 @@ export default async function TestDetailsPage({ params }) {
                     <p className="font-medium text-navy-800">{test.category}</p>
                   </div>
                 </div>
+                 <Button href={`/appointment?test=${test.slug}`} className="mt-6 w-full">
+                Book This Test
+              </Button>
             </Card>
           </div>
         </div>
