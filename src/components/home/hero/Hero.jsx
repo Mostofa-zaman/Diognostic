@@ -11,9 +11,9 @@ import "swiper/css/pagination";
 import VitalDivider from "../../common/VitalDivider";
 
 const images = [
-  "/images/slider1.jpg",
-  "/images/slider2.jpg",
-  "/images/slider3.jpg",
+  "/images/slider.jpg",
+  "/images/sliderOne.jpg",
+  "/images/sliderTwo.jpg",
 ];
 
 const stats = [
