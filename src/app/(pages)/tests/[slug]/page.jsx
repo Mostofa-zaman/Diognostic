@@ -60,6 +60,22 @@ export default async function TestDetailsPage({ params }) {
               </div>
             )}
       </div>
+        <div>
+            <Card className="sticky top-24 p-6">
+              <p className="font-mono text-3xl font-semibold text-navy-900">{test.price}</p>
+              <p className="text-xs text-navy-400">Price is indicative and may vary</p>
+
+              <div className="mt-6 space-y-4 border-t border-navy-100 pt-6 text-sm">
+                <div className="flex items-center gap-3">
+                  <Droplet size={17} className="text-teal-600" />
+                  <div>
+                    <p className="text-navy-400">Sample Type</p>
+                    <p className="font-medium text-navy-800">{test.sample}</p>
+                  </div>
+                </div>
+                </div>
+                 </Card>
+                </div>
       </div>
       </div>
     </section>
