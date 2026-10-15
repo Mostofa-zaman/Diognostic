@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Clock, Droplet, FileText } from "lucide-react";
 import Label from "@/components/common/Label";
 import { getTestBySlug, tests } from "@/data/tests";
 import { notFound } from "next/navigation";
+import Card from "@/components/common/Card";
 
 export default async function TestDetailsPage({ params }) {
     const { slug } = await params;
@@ -74,6 +75,21 @@ export default async function TestDetailsPage({ params }) {
                   </div>
                 </div>
                 </div>
+                 <div className="flex items-center gap-3">
+                  <Clock size={17} className="text-teal-600" />
+                  <div>
+                    <p className="text-navy-400">Report Time</p>
+                    <p className="font-medium text-navy-800">{test.reportTime}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FileText size={17} className="text-teal-600" />
+                  <div>
+                    <p className="text-navy-400">Category</p>
+                    <p className="font-medium text-navy-800">{test.category}</p>
+                  </div>
+                </div>
+              
                  </Card>
                 </div>
       </div>
