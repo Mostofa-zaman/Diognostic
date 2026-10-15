@@ -7,6 +7,22 @@ import { notFound } from "next/navigation";
 import Card from "@/components/common/Card";
 import Button from "@/components/common/Button";
 
+export function generateStaticParams() {
+  return tests.map((t) => ({ slug: t.slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const test = getTestBySlug(slug);
+
+  if (!test) return {};
+
+  return {
+    title: test.name,
+    description: test.description,
+  };
+}
+
 export default async function TestDetailsPage({ params }) {
     const { slug } = await params;
   const test = getTestBySlug(slug);
