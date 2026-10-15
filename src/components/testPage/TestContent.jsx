@@ -1,3 +1,4 @@
+import { testCategories, tests } from "@/data/tests";
 import TestDirectory from "./TestDirectory";
 
 export default function TestContent() {
