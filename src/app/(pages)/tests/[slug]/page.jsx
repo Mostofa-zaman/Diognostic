@@ -13,7 +13,6 @@ export default async function TestDetailsPage() {
         >
           <ArrowLeft size={15} />
           Back to All Tests
-          
         </Link>
            <div className="mt-6 grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
@@ -22,7 +21,17 @@ export default async function TestDetailsPage() {
               {test.name}
             </h1>
             <p className="mt-4 text-navy-500 leading-relaxed">{test.description}</p>
+            <div className="mt-8">
+              <h2 className="font-display text-xl font-semibold text-navy-900">
+                Why This Test Is Performed
+              </h2>
+              <p className="mt-2 text-navy-500 leading-relaxed">{test.why}</p>
+            </div>
 
+            <div className="mt-8">
+              <h2 className="font-display text-xl font-semibold text-navy-900">Preparation</h2>
+              <p className="mt-2 text-navy-500 leading-relaxed">{test.preparation}</p>
+            </div>
       </div>
       </div>
       </div>
