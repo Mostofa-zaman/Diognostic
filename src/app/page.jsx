@@ -9,7 +9,6 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import HomeCollectionPromo from "@/components/home/HomeCollectionPromo";
 import HealthTips from "@/components/home/HealthTips";
 import AppointmentCTA from "@/components/home/AppointmentCTA";
-import Footer from "@/components/footer/Footer";
 
 export default function HomePage() {
   return (
@@ -27,7 +26,6 @@ export default function HomePage() {
       <HomeCollectionPromo/> 
       <HealthTips/>
       <AppointmentCTA/>
-      <Footer/>
     </>
   );
 }

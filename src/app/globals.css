@@ -71,3 +71,29 @@ body {
     stroke-dashoffset: 0;
   }
 }
+
+.vital-divider {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+
+.vital-path {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: vital-draw 2.5s ease-in-out infinite;
+}
+
+@keyframes vital-draw {
+  0% {
+    stroke-dashoffset: 1400;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -1400;
+  }
+}
