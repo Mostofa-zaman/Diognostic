@@ -1,3 +1,5 @@
+
+import { galleryImages } from "@/data/galleryImages";
 import SectionHeading from "../common/SectionHeading";
 import GalleryGrid from "./GalleryGrid";
 
